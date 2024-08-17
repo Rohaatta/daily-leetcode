@@ -3,7 +3,7 @@ public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) 
     {
         unordered_map<int , int> mp;
-        vector<int> res;
+        vector<int> ans;
 
         for(int i=0 ;i<nums2.size() ; i++){
             int j = i + 1;
@@ -18,8 +18,8 @@ public:
         }
              for(auto it:nums1){
                 int x=mp[it];
-                res.push_back(x);
+                ans.push_back(x);
              }
-             return res;
+             return ans;
         }
 };
