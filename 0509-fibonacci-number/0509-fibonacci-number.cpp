@@ -7,7 +7,7 @@ public:
         if(n==1){
             return 1;
         }
-        int res=fib(n-1)+fib(n-2);
-        return res;
+        int ress=fib(n-1)+fib(n-2);
+        return ress;
     }
 };
