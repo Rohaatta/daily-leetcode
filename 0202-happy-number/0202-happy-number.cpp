@@ -3,19 +3,19 @@ public:
     bool isHappy(int n) {
         unordered_set<int>s;
         while(true){
-            int sum=0;
+            int summ=0;
             while(n!=0){
                 int digit=n%10;
-                sum+=digit*digit;
+                summ+=digit*digit;
                 n=n/10;
             }
 
-            if(sum==1)return true;
+            if(summ==1)return true;
 
-            if(s.find(sum)!=s.end())return false;
-            s.insert(sum);
+            if(s.find(summ)!=s.end())return false;
+            s.insert(summ);
 
-            n=sum;
+            n=summ;
         }
     }
 };
