@@ -1,22 +1,21 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string a;
-        string b;
-        string c;
-        for(int i=0;i<s.size();i++){
-            if(islower(s[i])|| isdigit(s[i])){
-                    a+=s[i];
-                    b+=s[i];
+        int left=0;
+        int right=s.size()-1;
+        while(left<right){
+            while(left<right && !isalnum(s[left])){
+                left++;
             }
-            else if(isupper(s[i])){
-                c=tolower(s[i]);
-                a+=c;
-                b+=c;
-            }}
-            reverse(a.begin(),a.end());
-            if(a==b)
-                return true; 
-         return false;
+            while(left<right && !isalnum(s[right])){
+                right--;
+            }
+            if(tolower(s[left])!=tolower(s[right])){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 };
